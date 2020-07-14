@@ -1,6 +1,7 @@
 import 'package:challenge6/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:page_indicator/page_indicator.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   @override
@@ -30,12 +31,26 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
       body: Column(
         children: <Widget>[
           SizedBox(
-            height: MediaQuery.of(context).size.height / 2.8,
+            height: MediaQuery.of(context).size.height / 2.5,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 SizedBox(width: 30,),
-                Image.asset('images/watch.png',height: 350,),
+                SizedBox(
+                  width: 300,
+                  child: PageIndicatorContainer(
+                    length: 10,
+                    child: PageView(
+                      children: <Widget>[
+                        Image.asset('images/watch.png',height: 350,),Image.asset('images/watch.png',height: 350,),Image.asset('images/watch.png',height: 350,),Image.asset('images/watch.png',height: 350,),Image.asset('images/watch.png',height: 350,),Image.asset('images/watch.png',height: 350,),Image.asset('images/watch.png',height: 350,),Image.asset('images/watch.png',height: 350,),Image.asset('images/watch.png',height: 350,),Image.asset('images/watch.png',height: 350,),
+                      ],
+                    ),
+                    shape: IndicatorShape.circle(),
+                    indicatorSpace: 30,
+                    indicatorSelectorColor: color,
+                    padding: EdgeInsets.only(bottom: 3),
+                  ),
+                ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: colorButtons,
