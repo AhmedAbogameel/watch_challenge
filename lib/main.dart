@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 main(){
   runApp(
     DevicePreview(
-      enabled: false,
+      enabled: true,
       builder: (context) => EntryWidget(),
     ),
   );
